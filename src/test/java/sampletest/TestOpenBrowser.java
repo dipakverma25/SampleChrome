@@ -9,8 +9,14 @@ public class TestOpenBrowser {
     private WebDriver webDriver;
 
     public TestOpenBrowser() {
-//        System.setProperty("webdriver.chrome.driver", "[chromedriver.exe path]");
-        ChromeDriver webDriver = new ChromeDriver();
+//        try {
+//            System.setProperty("webdriver.chrome.driver", System.getenv("path"));
+//        }catch (Exception e) {
+//            System.out.println("hhh" + e.getMessage());
+//        }
+        System.setProperty("webdriver.chrome.driver", System.getenv("CHROMEWEBDRIVER"));
+        System.out.println( System.getenv("path"));
+        webDriver = new ChromeDriver();
     }
 
     @Test
